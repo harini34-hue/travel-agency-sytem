@@ -1,0 +1,649 @@
+/* =========================
+   BASIC
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    min-height: 70px;
+    background: #0099cc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 60px;
+}
+
+.logo {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar nav a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    margin-top: 40px;
+    padding: 70px 40px;
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    color: #0077aa;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 35px;
+}
+
+/* =========================
+   ALL BUTTONS
+========================= */
+
+.btn {
+    display: inline-block;
+    background: #0099cc;
+    color: white;
+    text-decoration: none;
+
+    padding: 12px 25px;
+
+    border-radius: 6px;
+
+    margin: 8px;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #0077aa;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+section h2 {
+    text-align: center;
+    color: #0077aa;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+section > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* =========================
+   DESTINATION GRID
+========================= */
+
+.destination-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+/* =========================
+   DESTINATION CARD
+========================= */
+
+.destination-card {
+    background: white;
+
+    padding: 30px;
+
+    min-height: 280px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+}
+
+.destination-card h3 {
+    color: #0077aa;
+
+    font-size: 23px;
+
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+.destination-card p {
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+/* =========================
+   PACKAGE GRID
+========================= */
+
+.package-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+/* =========================
+   PACKAGE CARD
+========================= */
+
+.package-card {
+    background: white;
+
+    padding: 30px;
+
+    min-height: 270px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+}
+
+.package-card h3 {
+    color: #0077aa;
+
+    font-size: 22px;
+
+    margin-bottom: 18px;
+}
+
+.package-card p {
+    margin: 10px 0;
+
+    color: #555;
+}
+
+.package-card .btn {
+    margin-top: 20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 80px;
+
+    background: #0077aa;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+form {
+    width: 90%;
+    max-width: 550px;
+
+    margin: 50px auto;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+form label {
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+form input,
+form select {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    margin-bottom: 15px;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+    width: 100%;
+
+    margin-top: 30px;
+
+    border-collapse: collapse;
+
+    background: white;
+}
+
+th {
+    background: #0099cc;
+
+    color: white;
+
+    padding: 15px;
+}
+
+td {
+    padding: 15px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #ddd;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .destination-grid,
+    .package-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ============================= */
+/* ADMIN BOOKINGS TABLE */
+/* ============================= */
+
+.admin-container {
+    width: 92%;
+    margin: 40px auto;
+}
+
+.admin-container h1 {
+    margin-bottom: 8px;
+}
+
+.admin-container p {
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+    padding: 20px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 1000px;
+}
+
+.admin-table th {
+    background-color: #0099cc;
+    color: white;
+    padding: 15px 18px;
+    text-align: left;
+    font-size: 15px;
+}
+
+.admin-table th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.admin-table th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.admin-table td {
+    padding: 15px 18px;
+    border-bottom: 1px solid #eeeeee;
+    color: #333;
+    background-color: white;
+    white-space: nowrap;
+}
+
+.admin-table tr:hover td {
+    background-color: #f5fbfd;
+}
+
+.status-confirmed {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 15px;
+    background-color: #e6f7ee;
+    color: #16834b;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.admin-back-btn {
+    display: inline-block;
+    margin-top: 25px;
+}
+/* =====================================
+   BOOKING FORM
+   ===================================== */
+
+.form-container {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.form-card {
+    width: 500px;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+}
+
+.form-card h1 {
+    text-align: center;
+    color: #087f9b;
+    margin-bottom: 8px;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.form-card label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+
+.form-card input,
+.form-card select,
+.payment-card select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.primary-btn,
+.pay-btn {
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 13px;
+    border: none;
+    border-radius: 7px;
+    background: #08a9c9;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.primary-btn:hover,
+.pay-btn:hover {
+    background: #078ca8;
+}
+
+
+/* =====================================
+   PAYMENT PAGE
+   ===================================== */
+
+.payment-container {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.payment-card {
+    width: 500px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+}
+
+.payment-card h1 {
+    text-align: center;
+    color: #087f9b;
+}
+
+.payment-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.payment-icon {
+    text-align: center;
+    font-size: 55px;
+}
+
+.payment-summary {
+    background: #f5fbfd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.payment-summary div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.payment-summary div:last-child {
+    border-bottom: none;
+}
+
+.payment-summary span {
+    color: #555;
+}
+
+.payment-summary strong {
+    color: #087f9b;
+}
+
+.payment-summary .total-row {
+    font-size: 19px;
+}
+
+
+/* =====================================
+   MY BOOKINGS
+   ===================================== */
+
+.bookings-container {
+    padding: 45px;
+}
+
+.bookings-container h1 {
+    color: #087f9b;
+    margin-bottom: 5px;
+}
+
+.page-subtitle {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.booking-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+.booking-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+.booking-table th {
+    background: #08a9c9;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.booking-table td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.booking-table tr:hover {
+    background: #f5fbfd;
+}
+
+.status {
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.status.confirmed {
+    background: #dff5e4;
+    color: #187a32;
+}
+
+.status.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.no-bookings {
+    text-align: center;
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+}

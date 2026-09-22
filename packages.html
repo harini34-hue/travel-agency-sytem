@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Travel Packages - TravelGo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f9fc;
+            color: #333;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            height: 70px;
+            background-color: #0099cc;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* HEADER */
+        .page-header {
+            text-align: center;
+            padding: 45px 20px 25px;
+        }
+
+        .page-header h1 {
+            color: #0077b6;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: #666;
+            font-size: 17px;
+        }
+
+        /* PACKAGE GRID */
+        .packages {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto 60px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        /* CARD */
+        .package-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+            transition: 0.3s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .package-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .package-content {
+            padding: 20px;
+        }
+
+        .package-content h2 {
+            color: #0077b6;
+            margin-bottom: 12px;
+        }
+
+        .package-info {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .description {
+            color: #666;
+            line-height: 1.5;
+            margin: 15px 0;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0099cc;
+            margin-bottom: 15px;
+        }
+
+        /* BOOK BUTTON */
+        .book-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+
+            background-color: #0099cc;
+            color: white;
+
+            text-decoration: none;
+            border-radius: 7px;
+
+            font-weight: bold;
+        }
+
+        .book-btn:hover {
+            background-color: #0077b6;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .packages {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .packages {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            ✈ TravelGo
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/destinations">Destinations</a>
+
+            <a href="/packages">Packages</a>
+
+            <a href="#">About</a>
+
+            <a href="#">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <h1>Travel Packages</h1>
+
+        <p>
+            Choose your favorite package and start your journey.
+        </p>
+
+    </section>
+
+
+    <!-- PACKAGES -->
+
+    <section class="packages">
+
+
+        <!-- GOA -->
+
+        <div class="package-card">
+
+            <img
+                class="package-image"
+                src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80"
+                alt="Goa">
+
+            <div class="package-content">
+
+                <h2>Goa Beach Escape</h2>
+
+                <div class="package-info">
+                    <strong>Destination:</strong> Goa
+                </div>
+
+                <div class="package-info">
+                    <strong>Duration:</strong> 3 Days / 2 Nights
+                </div>
+
+                <p class="description">
+                    Enjoy beautiful beaches, sightseeing,
+                    delicious food and relaxing evenings.
+                </p>
+
+                <div class="price">
+                    ₹8,999
+                </div>
+
+                <a href="/booking" class="book-btn">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MANALI -->
+
+        <div class="package-card">
+
+            <img
+                class="package-image"
+                src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80"
+                alt="Manali">
+
+            <div class="package-content">
+
+                <h2>Manali Adventure</h2>
+
+                <div class="package-info">
+                    <strong>Destination:</strong> Manali
+                </div>
+
+                <div class="package-info">
+                    <strong>Duration:</strong> 5 Days / 4 Nights
+                </div>
+
+                <p class="description">
+                    Explore mountains, valleys and beautiful
+                    Himalayan landscapes.
+                </p>
+
+                <div class="price">
+                    ₹14,999
+                </div>
+
+                <a href="/booking" class="book-btn">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- JAIPUR -->
+
+        <div class="package-card">
+
+            <img
+                class="package-image"
+                src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80"
+                alt="Jaipur">
+
+            <div class="package-content">
+
+                <h2>Royal Jaipur Tour</h2>
+
+                <div class="package-info">
+                    <strong>Destination:</strong> Jaipur
+                </div>
+
+                <div class="package-info">
+                    <strong>Duration:</strong> 4 Days / 3 Nights
+                </div>
+
+                <p class="description">
+                    Visit royal palaces, historic forts,
+                    markets and cultural attractions.
+                </p>
+
+                <div class="price">
+                    ₹10,999
+                </div>
+
+                <a href="/booking" class="book-btn">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- KERALA -->
+
+        <div class="package-card">
+
+            <img
+                class="package-image"
+                src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80"
+                alt="Kerala">
+
+            <div class="package-content">
+
+                <h2>Kerala Backwater Trip</h2>
+
+                <div class="package-info">
+                    <strong>Destination:</strong> Kerala
+                </div>
+
+                <div class="package-info">
+                    <strong>Duration:</strong> 4 Days / 3 Nights
+                </div>
+
+                <p class="description">
+                    Experience peaceful backwaters,
+                    greenery and beautiful scenery.
+                </p>
+
+                <div class="price">
+                    ₹12,999
+                </div>
+
+                <a href="/booking" class="book-btn">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- HYDERABAD -->
+
+        <div class="package-card">
+
+            <img
+                class="package-image"
+                src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80"
+                alt="Hyderabad">
+
+            <div class="package-content">
+
+                <h2>Hyderabad Heritage</h2>
+
+                <div class="package-info">
+                    <strong>Destination:</strong> Hyderabad
+                </div>
+
+                <div class="package-info">
+                    <strong>Duration:</strong> 2 Days / 1 Night
+                </div>
+
+                <p class="description">
+                    Explore historic monuments, local cuisine
+                    and famous attractions.
+                </p>
+
+                <div class="price">
+                    ₹5,999
+                </div>
+
+                <a href="/booking" class="book-btn">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- OOTY -->
+
+        <div class="package-card">
+
+            <img
+                class="package-image"
+                src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80"
+                alt="Ooty">
+
+            <div class="package-content">
+
+                <h2>Ooty Nature Escape</h2>
+
+                <div class="package-info">
+                    <strong>Destination:</strong> Ooty
+                </div>
+
+                <div class="package-info">
+                    <strong>Duration:</strong> 3 Days / 2 Nights
+                </div>
+
+                <p class="description">
+                    Enjoy green hills, tea gardens,
+                    pleasant weather and natural scenery.
+                </p>
+
+                <div class="price">
+                    ₹7,999
+                </div>
+
+                <a href="/booking" class="book-btn">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</body>
+
+</html>
