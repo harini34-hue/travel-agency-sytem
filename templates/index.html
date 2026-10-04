@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TravelGo - Travel Agency</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f9fc;
+            color: #333;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background: #0099cc;
+            color: white;
+            padding: 18px 60px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* HERO SECTION */
+
+        .hero {
+            min-height: 430px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background: linear-gradient(
+                rgba(0, 153, 204, 0.10),
+                rgba(255, 255, 255, 0.95)
+            );
+
+            padding: 70px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-small {
+            color: #0077aa;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #006b96;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+
+            background: #0099cc;
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #0077aa;
+        }
+
+        .btn-outline {
+            background: white;
+            color: #0099cc;
+            border: 2px solid #0099cc;
+        }
+
+        .btn-outline:hover {
+            background: #0099cc;
+            color: white;
+        }
+
+
+        /* SECTION */
+
+        .section {
+            width: 90%;
+            max-width: 1200px;
+            margin: 60px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #006b96;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+
+        /* DESTINATION CARDS */
+
+        .destination-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 25px;
+        }
+
+        .destination-card {
+            background: white;
+
+            padding: 30px 25px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .destination-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .destination-card h3 {
+            color: #0077aa;
+            margin-bottom: 12px;
+        }
+
+        .destination-card p {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+
+        /* PACKAGE SECTION */
+
+        .package-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+
+            gap: 25px;
+        }
+
+        .package-card {
+            background: white;
+
+            padding: 28px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .package-card h3 {
+            color: #0077aa;
+            margin-bottom: 12px;
+        }
+
+        .package-card p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #0099cc !important;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 15px 0 !important;
+        }
+
+
+        /* WHY TRAVELGO */
+
+        .why-section {
+            background: white;
+            padding: 55px 20px;
+        }
+
+        .why-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 25px;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .why-card h3 {
+            color: #0077aa;
+            margin: 12px 0;
+        }
+
+        .why-card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .why-icon {
+            font-size: 38px;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: #006b96;
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 18px 25px;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            ✈ TravelGo
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/destinations">
+                Destinations
+            </a>
+
+            <a href="/packages">
+                Packages
+            </a>
+
+            <a href="/login">
+                Login
+            </a>
+
+            <a href="/register">
+                Register
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-small">
+                EXPLORE THE WORLD
+            </div>
+
+            <h1>
+                Discover Your<br>
+                Next Adventure
+            </h1>
+
+            <p>
+                Explore beautiful destinations, choose exciting
+                travel packages, and create unforgettable memories
+                with TravelGo.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/packages" class="btn">
+                    Explore Packages
+                </a>
+
+                <a href="/destinations" class="btn btn-outline">
+                    View Destinations
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- DESTINATIONS -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Popular Destinations
+        </h2>
+
+        <p class="section-description">
+            Discover amazing places for your next journey.
+        </p>
+
+
+        <div class="destination-grid">
+
+
+            <div class="destination-card">
+
+                <div class="destination-icon">
+                    🏖️
+                </div>
+
+                <h3>Goa</h3>
+
+                <p>
+                    Enjoy beautiful beaches,
+                    nightlife and stunning sunsets.
+                </p>
+
+                <a href="/destinations" class="btn">
+                    Explore
+                </a>
+
+            </div>
+
+
+
+            <div class="destination-card">
+
+                <div class="destination-icon">
+                    🏔️
+                </div>
+
+                <h3>Manali</h3>
+
+                <p>
+                    Experience mountains,
+                    snowfall and peaceful landscapes.
+                </p>
+
+                <a href="/destinations" class="btn">
+                    Explore
+                </a>
+
+            </div>
+
+
+
+            <div class="destination-card">
+
+                <div class="destination-icon">
+                    🌴
+                </div>
+
+                <h3>Kerala</h3>
+
+                <p>
+                    Explore beautiful backwaters,
+                    nature and greenery.
+                </p>
+
+                <a href="/destinations" class="btn">
+                    Explore
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PACKAGES -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Popular Travel Packages
+        </h2>
+
+        <p class="section-description">
+            Choose a package that suits your journey.
+        </p>
+
+
+        <div class="package-grid">
+
+
+            <div class="package-card">
+
+                <h3>
+                    Goa Beach Escape
+                </h3>
+
+                <p>
+                    3 Days / 2 Nights
+                </p>
+
+                <p class="price">
+                    ₹8,999
+                </p>
+
+                <a href="/booking" class="btn">
+                    Book Now
+                </a>
+
+            </div>
+
+
+
+            <div class="package-card">
+
+                <h3>
+                    Manali Adventure
+                </h3>
+
+                <p>
+                    5 Days / 4 Nights
+                </p>
+
+                <p class="price">
+                    ₹14,999
+                </p>
+
+                <a href="/booking" class="btn">
+                    Book Now
+                </a>
+
+            </div>
+
+
+
+            <div class="package-card">
+
+                <h3>
+                    Royal Jaipur Tour
+                </h3>
+
+                <p>
+                    4 Days / 3 Nights
+                </p>
+
+                <p class="price">
+                    ₹10,999
+                </p>
+
+                <a href="/booking" class="btn">
+                    Book Now
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- WHY TRAVELGO -->
+
+    <section class="why-section">
+
+        <h2 class="section-title">
+            Why Choose TravelGo?
+        </h2>
+
+        <p class="section-description">
+            Everything you need for a smooth and memorable journey.
+        </p>
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    🌍
+                </div>
+
+                <h3>
+                    Amazing Destinations
+                </h3>
+
+                <p>
+                    Discover beautiful destinations
+                    across India.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Affordable Packages
+                </h3>
+
+                <p>
+                    Choose travel packages
+                    at reasonable prices.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    📅
+                </div>
+
+                <h3>
+                    Easy Booking
+                </h3>
+
+                <p>
+                    Book your trip through
+                    a simple online process.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    🔒
+                </div>
+
+                <h3>
+                    Secure Management
+                </h3>
+
+                <p>
+                    Manage bookings and payments
+                    through our system.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 TravelGo Travel Agency
+        </p>
+
+        <p>
+            Explore • Travel • Create Memories
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
