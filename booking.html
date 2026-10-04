@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Your Trip - TravelGo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f9fc;
+            color: #333;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            height: 70px;
+            background-color: #0099cc;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* BOOKING CARD */
+        .booking-container {
+            width: 550px;
+            max-width: 90%;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .booking-container h1 {
+            text-align: center;
+            color: #0077b6;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+
+        .booking-container .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        /* FORM */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 16px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #0099cc;
+        }
+
+        /* BUTTON */
+        .booking-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #0099cc;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .booking-btn:hover {
+            background-color: #0077b6;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .booking-container {
+                padding: 25px;
+                margin: 30px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            ✈ TravelGo
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/destinations">
+                Destinations
+            </a>
+
+            <a href="/packages">
+                Packages
+            </a>
+
+            <a href="#">
+                About
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- BOOKING FORM -->
+
+    <div class="booking-container">
+
+        <h1>Book Your Trip</h1>
+
+        <p class="subtitle">
+            Fill in your details to confirm your travel booking.
+        </p>
+
+
+        <form method="POST">
+
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label>Name</label>
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    required>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="form-group">
+
+                <label>Phone</label>
+
+                <input
+                    type="text"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    required>
+
+            </div>
+
+
+            <!-- PACKAGE -->
+
+            <div class="form-group">
+
+                <label>Travel Package</label>
+
+                <select name="package" required>
+
+                    <option value="">
+                        Select a package
+                    </option>
+
+                    <option value="Goa Beach Escape">
+                        Goa Beach Escape
+                    </option>
+
+                    <option value="Manali Adventure">
+                        Manali Adventure
+                    </option>
+
+                    <option value="Royal Jaipur Tour">
+                        Royal Jaipur Tour
+                    </option>
+
+                    <option value="Kerala Backwater Trip">
+                        Kerala Backwater Trip
+                    </option>
+
+                    <option value="Hyderabad Heritage">
+                        Hyderabad Heritage
+                    </option>
+
+                    <option value="Ooty Nature Escape">
+                        Ooty Nature Escape
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- TRAVEL DATE -->
+
+            <div class="form-group">
+
+                <label>Travel Date</label>
+
+                <input
+                    type="date"
+                    name="travel_date"
+                    required>
+
+            </div>
+
+
+            <!-- NUMBER OF PEOPLE -->
+
+            <div class="form-group">
+
+                <label>Number of People</label>
+
+                <input
+                    type="number"
+                    name="people"
+                    min="1"
+                    value="1"
+                    required>
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <button
+                type="submit"
+                class="booking-btn">
+
+                Confirm Booking
+
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

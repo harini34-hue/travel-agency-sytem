@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>My Bookings - TravelGo</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        ✈ TravelGo
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/destinations">Destinations</a>
+        <a href="/packages">Packages</a>
+        <a href="/my-bookings">My Bookings</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="/admin-login">Admin Login</a>
+    </div>
+
+</nav>
+
+
+<div class="bookings-container">
+
+    <h1>My Bookings</h1>
+
+    <p class="page-subtitle">
+        View your confirmed travel bookings
+    </p>
+
+
+    {% if bookings %}
+
+    <div class="booking-table-container">
+
+        <table class="booking-table">
+
+            <thead>
+
+                <tr>
+                    <th>Booking ID</th>
+                    <th>Package</th>
+                    <th>Destination</th>
+                    <th>Duration</th>
+                    <th>Booking Date</th>
+                    <th>People</th>
+                    <th>Total Amount</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                {% for booking in bookings %}
+
+                <tr>
+
+                    <td>{{ booking[0] }}</td>
+
+                    <td>{{ booking[1] }}</td>
+
+                    <td>{{ booking[2] }}</td>
+
+                    <td>{{ booking[3] }}</td>
+
+                    <td>{{ booking[4] }}</td>
+
+                    <td>{{ booking[5] }}</td>
+
+                    <td>₹{{ booking[6] }}</td>
+
+                    <td>
+
+                        {% if booking[7] == 'Confirmed' %}
+
+                        <span class="status confirmed">
+                            Confirmed
+                        </span>
+
+                        {% else %}
+
+                        <span class="status pending">
+                            {{ booking[7] }}
+                        </span>
+
+                        {% endif %}
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    {% else %}
+
+    <div class="no-bookings">
+
+        <h2>No Bookings Yet</h2>
+
+        <p>
+            You have not made any travel bookings.
+        </p>
+
+        <a href="/packages" class="primary-btn">
+            Explore Packages
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

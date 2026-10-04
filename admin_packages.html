@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Packages - TravelGo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f9fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #079ac1;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            margin: 30px auto;
+        }
+
+        h1 {
+            color: #075985;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background-color: #079ac1;
+            color: white;
+            padding: 12px;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        tr:hover {
+            background-color: #f1faff;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #079ac1;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    ✈️ TravelGo Admin
+</header>
+
+<div class="container">
+
+    <h1>Manage Travel Packages</h1>
+
+    <table>
+
+        <tr>
+            <th>Package ID</th>
+            <th>Package Name</th>
+            <th>Destination</th>
+            <th>Duration</th>
+            <th>Price</th>
+            <th>Available Seats</th>
+        </tr>
+
+        {% for package in packages %}
+
+        <tr>
+            <td>{{ package[0] }}</td>
+            <td>{{ package[1] }}</td>
+            <td>{{ package[2] }}</td>
+            <td>{{ package[3] }}</td>
+            <td>₹{{ package[4] }}</td>
+            <td>{{ package[5] }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <a href="/admin-dashboard" class="back">
+        Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+</html>

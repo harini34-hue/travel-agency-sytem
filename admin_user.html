@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Users - TravelGo</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f9fc;
+        }
+
+        .navbar {
+            height: 70px;
+            background-color: #0099cc;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .back {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            padding: 40px 50px;
+        }
+
+        h1 {
+            color: #0077b6;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .table-container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0099cc;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f5f9fc;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background-color: #0099cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .back-button:hover {
+            background-color: #0077b6;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            ✈ TravelGo Admin
+        </div>
+
+        <a href="/admin-dashboard" class="back">
+            Dashboard
+        </a>
+
+    </nav>
+
+
+    <div class="container">
+
+        <h1>Manage Users</h1>
+
+        <p class="subtitle">
+            View all registered customers
+        </p>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Role</th>
+                </tr>
+
+                {% for user in users %}
+
+                <tr>
+
+                    <td>{{ user[0] }}</td>
+
+                    <td>{{ user[1] }}</td>
+
+                    <td>{{ user[2] }}</td>
+
+                    <td>{{ user[3] }}</td>
+
+                    <td>{{ user[4] }}</td>
+
+                </tr>
+
+                {% endfor %}
+
+            </table>
+
+        </div>
+
+
+        <a href="/admin-dashboard" class="back-button">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+</body>
+
+</html>

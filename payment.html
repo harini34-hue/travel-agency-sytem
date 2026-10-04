@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Payment - TravelGo</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+
+        /* =========================
+           PAYMENT PAGE
+           ========================= */
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f9fb;
+        }
+
+
+        /* =========================
+           NAVIGATION
+           ========================= */
+
+        .navbar {
+            background: #08a9c9;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            color: white;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 8px 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: white;
+            color: #08a9c9;
+        }
+
+
+        /* =========================
+           PAYMENT CONTAINER
+           ========================= */
+
+        .payment-container {
+            min-height: calc(100vh - 70px);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 40px 20px;
+
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           PAYMENT CARD
+           ========================= */
+
+        .payment-card {
+
+            width: 500px;
+
+            max-width: 100%;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.12);
+
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           ICON
+           ========================= */
+
+        .payment-icon {
+
+            text-align: center;
+
+            font-size: 55px;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           HEADING
+           ========================= */
+
+        .payment-card h1 {
+
+            text-align: center;
+
+            color: #087f9b;
+
+            margin: 5px 0 10px;
+
+            font-size: 30px;
+        }
+
+
+        .payment-subtitle {
+
+            text-align: center;
+
+            color: #666;
+
+            font-size: 15px;
+
+            margin-bottom: 25px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           BOOKING SUMMARY
+           ========================= */
+
+        .payment-summary {
+
+            background: #f3fbfd;
+
+            border: 1px solid #d8eef3;
+
+            border-radius: 10px;
+
+            padding: 18px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .summary-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 12px 0;
+
+            border-bottom: 1px solid #dcecef;
+
+            gap: 15px;
+        }
+
+
+        .summary-row:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .summary-label {
+
+            color: #555;
+
+            font-size: 15px;
+        }
+
+
+        .summary-value {
+
+            color: #087f9b;
+
+            font-weight: bold;
+
+            text-align: right;
+        }
+
+
+        /* =========================
+           TOTAL
+           ========================= */
+
+        .total-row {
+
+            margin-top: 5px;
+
+            padding-top: 15px;
+
+        }
+
+
+        .total-row .summary-label {
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            color: #222;
+        }
+
+
+        .total-row .summary-value {
+
+            font-size: 20px;
+
+            color: #08a9c9;
+        }
+
+
+        /* =========================
+           PAYMENT FORM
+           ========================= */
+
+        .payment-form label {
+
+            display: block;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+
+            color: #222;
+        }
+
+
+        .payment-form select {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 7px;
+
+            font-size: 15px;
+
+            background: white;
+
+            box-sizing: border-box;
+
+            outline: none;
+        }
+
+
+        .payment-form select:focus {
+
+            border-color: #08a9c9;
+
+        }
+
+
+        /* =========================
+           PAY BUTTON
+           ========================= */
+
+        .pay-btn {
+
+            width: 100%;
+
+            margin-top: 22px;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background: #08a9c9;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .pay-btn:hover {
+
+            background: #078ca8;
+
+            transform: translateY(-1px);
+
+        }
+
+
+        /* =========================
+           BACK BUTTON
+           ========================= */
+
+        .back-btn {
+
+            display: block;
+
+            text-align: center;
+
+            margin-top: 15px;
+
+            color: #087f9b;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+        }
+
+
+        .back-btn:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 900px) {
+
+            .navbar {
+
+                height: auto;
+
+                padding: 15px;
+
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+            .nav-links {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 5px;
+            }
+
+            .nav-links a {
+
+                font-size: 13px;
+
+            }
+
+            .payment-card {
+
+                padding: 25px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION BAR
+     ========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        ✈ TravelGo
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/destinations">
+            Destinations
+        </a>
+
+        <a href="/packages">
+            Packages
+        </a>
+
+        <a href="/my-bookings">
+            My Bookings
+        </a>
+
+        <a href="/login">
+            Login
+        </a>
+
+        <a href="/register">
+            Register
+        </a>
+
+        <a href="/admin-login">
+            Admin Login
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     PAYMENT SECTION
+     ========================= -->
+
+<div class="payment-container">
+
+
+    <div class="payment-card">
+
+
+        <!-- Payment Icon -->
+
+        <div class="payment-icon">
+            💳
+        </div>
+
+
+        <!-- Heading -->
+
+        <h1>
+            Complete Your Payment
+        </h1>
+
+
+        <p class="payment-subtitle">
+
+            Your booking is ready.
+            Complete the payment to confirm your trip.
+
+        </p>
+
+
+
+        <!-- =========================
+             BOOKING DETAILS
+             ========================= -->
+
+        <div class="payment-summary">
+
+
+            <div class="summary-row">
+
+                <span class="summary-label">
+                    Booking ID
+                </span>
+
+                <span class="summary-value">
+                    #{{ booking_id }}
+                </span>
+
+            </div>
+
+
+
+            <div class="summary-row">
+
+                <span class="summary-label">
+                    Package
+                </span>
+
+                <span class="summary-value">
+                    {{ package_name }}
+                </span>
+
+            </div>
+
+
+
+            <div class="summary-row">
+
+                <span class="summary-label">
+                    Number of People
+                </span>
+
+                <span class="summary-value">
+                    {{ people }}
+                </span>
+
+            </div>
+
+
+
+            <div class="summary-row total-row">
+
+                <span class="summary-label">
+                    Total Amount
+                </span>
+
+                <span class="summary-value">
+                    ₹{{ total_amount }}
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             PAYMENT FORM
+             ========================= -->
+
+        <form method="POST"
+              action="/payment"
+              class="payment-form">
+
+
+            <!-- IMPORTANT:
+                 This sends booking ID
+                 back to Flask -->
+
+            <input
+                type="hidden"
+                name="booking_id"
+                value="{{ booking_id }}"
+            >
+
+
+            <label for="payment_method">
+                Payment Method
+            </label>
+
+
+            <select
+                id="payment_method"
+                name="payment_method"
+                required
+            >
+
+                <option value="">
+                    Select Payment Method
+                </option>
+
+                <option value="UPI">
+                    UPI
+                </option>
+
+                <option value="Debit Card">
+                    Debit Card
+                </option>
+
+                <option value="Credit Card">
+                    Credit Card
+                </option>
+
+                <option value="Net Banking">
+                    Net Banking
+                </option>
+
+            </select>
+
+
+
+            <!-- PAY BUTTON -->
+
+            <button
+                type="submit"
+                class="pay-btn"
+            >
+
+                💳 Pay ₹{{ total_amount }}
+
+            </button>
+
+
+        </form>
+
+
+
+        <!-- Back -->
+
+        <a
+            href="/packages"
+            class="back-btn"
+        >
+
+            ← Back to Packages
+
+        </a>
+
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

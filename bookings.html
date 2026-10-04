@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Your Trip - TravelGo</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        ✈ TravelGo
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/destinations">Destinations</a>
+        <a href="/packages">Packages</a>
+        <a href="/my-bookings">My Bookings</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="/admin-login">Admin Login</a>
+    </div>
+
+</nav>
+
+
+<div class="form-container">
+
+    <div class="form-card">
+
+        <h1>Book Your Trip</h1>
+
+        <p class="form-subtitle">
+            Enter your details to continue to payment
+        </p>
+
+        <form method="POST" action="/booking">
+
+            <label>Name</label>
+            <input type="text"
+                   name="name"
+                   placeholder="Enter your name"
+                   required>
+
+            <label>Email</label>
+            <input type="email"
+                   name="email"
+                   placeholder="Enter your email"
+                   required>
+
+            <label>Phone</label>
+            <input type="tel"
+                   name="phone"
+                   placeholder="Enter your phone number"
+                   required>
+
+            <label>Travel Package</label>
+
+            <select name="package" required>
+
+                <option value="">Select Package</option>
+
+                <option value="Goa Beach Escape">
+                    Goa Beach Escape - ₹8999
+                </option>
+
+                <option value="Manali Adventure">
+                    Manali Adventure - ₹14999
+                </option>
+
+                <option value="Royal Jaipur Tour">
+                    Royal Jaipur Tour - ₹10999
+                </option>
+
+                <option value="Kerala Backwater Trip">
+                    Kerala Backwater Trip - ₹12999
+                </option>
+
+                <option value="Hyderabad Heritage">
+                    Hyderabad Heritage - ₹5999
+                </option>
+
+                <option value="Ooty Nature Escape">
+                    Ooty Nature Escape - ₹7999
+                </option>
+
+            </select>
+
+
+            <label>Travel Date</label>
+
+            <input type="date"
+                   name="travel_date"
+                   required>
+
+
+            <label>Number of People</label>
+
+            <input type="number"
+                   name="people"
+                   min="1"
+                   value="1"
+                   required>
+
+
+            <button type="submit" class="primary-btn">
+                Continue to Payment →
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
